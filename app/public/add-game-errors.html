@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedstrijd toevoegen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.min.css">
+</head>
+<body class="container">
+<div class="row">
+<div class="col s12">
+    <nav class="teal lighten-2 nav-extended ">
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">&nbsp;&nbsp;Wedstrijdkalender</a>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="competitions/1">Eerste klasse A</a></li>
+                <li class="tab"><a href="competitions/2">Nepcompetitie</a></li>
+            </ul>
+            <a class="btn-floating btn-large halfway-fab waves-effect waves-light amber darken-2" href="games/add">
+                <i class="material-icons">add</i>
+            </a>
+        </div>
+    </nav>
+</div>
+<form class="col s12" method="post" action="games/add">
+    <h2>Wedstrijd toevoegen</h2>
+    <div class="row">
+            <div class="col s12 red-text">
+            <ul>
+                            <li>The home club id field is required.</li>
+                            <li>The away club id field is required.</li>
+                            <li>The home score must be at least 0.</li>
+                            <li>The starts at field is required.</li>
+                        </ul>
+        </div>
+        <div class="input-field col s12 m6">
+        <select name="home_club_id">
+            <option value="" disabled selected>Selecteer thuisploeg</option>
+                        <option value="6">Beerschot VA</option>
+                        <option value="5">Cercle Brugge</option>
+                        <option value="2">Club Brugge</option>
+                        <option value="3">KAA Gent</option>
+                        <option value="17">KAS Eupen</option>
+                        <option value="15">KRC Genk</option>
+                        <option value="9">KV Kortrijk</option>
+                        <option value="11">KV Mechelen</option>
+                        <option value="12">KV Oostende</option>
+                        <option value="8">Oud-Heverlee Leuven</option>
+                        <option value="14">RFC Seraing</option>
+                        <option value="1">Royal Antwerp FC</option>
+                        <option value="13">RSC Anderlecht</option>
+                        <option value="16">Sint-Truidense VV</option>
+                        <option value="10">Sporting Charleroi</option>
+                        <option value="7">Standard Luik</option>
+                        <option value="18">SV Zulte Waregem</option>
+                        <option value="4">Union Sint-Gillis</option>
+                    </select>
+        <label>Thuisploeg</label>
+    </div>
+    <div class="input-field col s12 m6">
+        <select name="away_club_id">
+            <option value="" disabled selected>Selecteer uitploeg</option>
+                        <option value="6">Beerschot VA</option>
+                        <option value="5">Cercle Brugge</option>
+                        <option value="2">Club Brugge</option>
+                        <option value="3">KAA Gent</option>
+                        <option value="17">KAS Eupen</option>
+                        <option value="15">KRC Genk</option>
+                        <option value="9">KV Kortrijk</option>
+                        <option value="11">KV Mechelen</option>
+                        <option value="12">KV Oostende</option>
+                        <option value="8">Oud-Heverlee Leuven</option>
+                        <option value="14">RFC Seraing</option>
+                        <option value="1">Royal Antwerp FC</option>
+                        <option value="13">RSC Anderlecht</option>
+                        <option value="16">Sint-Truidense VV</option>
+                        <option value="10">Sporting Charleroi</option>
+                        <option value="7">Standard Luik</option>
+                        <option value="18">SV Zulte Waregem</option>
+                        <option value="4">Union Sint-Gillis</option>
+                    </select>
+        <label>Uitploeg</label>
+    </div>
+    <div class="input-field col s6">
+        <input placeholder="nog niet gespeeld" id="home_score" name="home_score" type="number" value="-4">
+        <label for="home_score">Score thuisploeg</label>
+    </div>
+    <div class="input-field col s6">
+        <input placeholder="nog niet gespeeld" id="away_score" name="away_score" type="number" value="">
+        <label for="away_score">Score uitploeg</label>
+    </div>
+    <div class="input-field col s12 m6">
+        <input id="starts_at" name="starts_at" type="datetime-local" value="">
+        <label for="starts_at" class="active">Tijdstip</label>
+    </div>
+    <div class="input-field col s12 m6">
+        <button class="waves-effect waves-light btn right">Voeg toe</button>
+    </div>
+</div>
+</form>
+</div>
+<script src="js/materialize.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>
+</body>
+</html>

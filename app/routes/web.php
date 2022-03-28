@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('competitions/{id}', 'App\Http\Controllers\MainController@competition')->where(['id' => '[0-9]+']);
+Route::get('games/add', 'App\Http\Controllers\MainController@add');
+Route::post('games/add', 'App\Http\Controllers\MainController@store');
+
+
